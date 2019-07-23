@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ConversationComponent } from './conversation/conversation.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MenuComponent } from './menu/menu.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes) ],
-  declarations: [ AppComponent, HelloComponent, LoginComponent, HomeComponent, ConversationComponent, ProfileComponent ],
+  declarations: [ AppComponent, HelloComponent, LoginComponent, HomeComponent, ConversationComponent, ProfileComponent, MenuComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
