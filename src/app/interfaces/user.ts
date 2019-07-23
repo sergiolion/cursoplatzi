@@ -1,6 +1,6 @@
 export interface User {
   nick: string;
-  subnick: string;
+  subnick?: string;
   edad: number;
   mail: string;
   friend: boolean;
