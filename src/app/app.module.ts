@@ -2,8 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { Routes } from '@angular/router';
-import { RouterModule } from '@angular/router'
-import { SearchPipe } from './pipes/search.ts'
+import { RouterModule } from '@angular/router';
+import { SearchPipe } from './pipes/search.ts';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../enviroments/environment';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database'
+
+
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -23,7 +31,14 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes) ],
+  imports:      [ BrowserModule, 
+                  FormsModule, 
+                  RouterModule.forRoot(appRoutes),
+                  AngularFireModule.initializeApp(environment.firebase),
+                  AngularFirestoreModule,
+                  AngularFireAuthModule,
+                  AngularFireStorageModule,
+                  AngularFireDatabaseModule  ],
   declarations: [ AppComponent, HelloComponent, LoginComponent, HomeComponent, ConversationComponent, ProfileComponent, MenuComponent, SearchPipe ],
   bootstrap:    [ AppComponent ]
 })
