@@ -1,6 +1,17 @@
 <ng-container *ngFor="let user of friends; let i = index">
-  <p *ngIf="!user.friend">
-    {{i+1}}. {{user.nick}}<br>
-    {{user.mail}}
-  </p>
+  <div *ngIf="user.friend">
+    <a routerLink='/conversation/{{user.id}}'>
+      {{i+1}}. {{user.nick}}<br>
+      {{user.mail}}
+    </a>
+  </div>
+</ng-container>
+
+
+<ng-container *ngFor="let user of friends; let i = index">
+  <div *ngIf="!user.friend">
+    <a >
+      {{i+1}}. {{user.nick}} || {{user.mail}}
+    </a>
+  </div>
 </ng-container>
