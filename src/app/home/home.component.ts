@@ -11,9 +11,10 @@ import { UserService } from '../services/user.service';
 export class HomeComponent implements OnInit {
 
   friends: User[];
+  query: string = '';
 
   constructor(private userService: UserService) { 
-    this.friends = UserService.getFriends();
+    this.friends = userService.getFriends();
 
     
   }

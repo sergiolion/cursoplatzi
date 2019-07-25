@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router'
+import { SearchPipe } from './pipes/search.ts'
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -23,7 +24,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes) ],
-  declarations: [ AppComponent, HelloComponent, LoginComponent, HomeComponent, ConversationComponent, ProfileComponent, MenuComponent ],
+  declarations: [ AppComponent, HelloComponent, LoginComponent, HomeComponent, ConversationComponent, ProfileComponent, MenuComponent, SearchPipe ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
